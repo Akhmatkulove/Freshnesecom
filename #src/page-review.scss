@@ -1,0 +1,125 @@
+.page-review {
+    padding: 70px 0 90px 0;
+    border-bottom: 1px solid #F9F9F9;
+		// .page-review__body
+
+		&__body {
+		}
+
+		// .page-review__header
+
+		&__header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 42px;
+		}
+
+		// .page-review__items
+        &__shadow{
+            overflow: hidden;
+            position: relative;
+            &__left{
+                @include shadowBlock;
+                left: 0;
+            }
+            &__right{
+                @include shadowBlock;
+                right: 0;
+                transform: scaleX(-1);
+            }
+            &__btn-left{
+                @include reviewArrow;
+                left: 0;
+                border-radius: 0 12px 12px 0;
+            }
+            &__btn-right{
+                @include reviewArrow;
+                right: 0;
+                border-radius: 12px 0 0 12px;
+            }
+        }
+		&__items {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            overflow-x: scroll;
+		}
+}
+.sub-header {
+		// .review-header__title
+
+		&__title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 27px;
+            color: #151515;
+		}
+
+		// .review-header__btn
+
+		&__btn {
+            display: flex;
+            align-items: center;
+            gap: 12.53px;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 22px;
+            color: #151515;
+		}
+}
+.review-items {
+		// .review-items__item
+		&__item {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            max-width: 369px;
+            min-height: 198px;
+            padding: 24px 32px 40px 32px;
+            margin-bottom: 24px;
+            text-align: center;
+            border: 1px solid #F1F1F1;
+            border-radius: 12px;
+            &__text{
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 22px;
+                color: #151515;
+                margin-bottom: 24px;
+            }
+            &__name{
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 18px;
+                color: #A9A9A9;
+		    }
+            &__img{    
+                width: 48px;
+                height: 48px;
+                position: absolute;
+                bottom: -24px;
+                left: calc(50% - 24px);
+                & img{
+                    border-radius: 50%;
+                }
+            }
+        }
+}
+@media (max-width: 479px){
+    .review-items__item{
+        max-width: 280px;
+        &__text{
+            font-size: 12px;}
+    }
+    .sub-header{
+        &__title{
+            font-size: 14px;
+        }
+        &__btn{
+            font-size: 14px;
+        }
+    }
+
+}   
